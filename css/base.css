@@ -7,6 +7,7 @@
 :root {
   --default-sans: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --default-serif: "Cardo", serif;
+  --primary: #FAB12F;
 }
 
 * {
@@ -41,20 +42,34 @@ a:hover {
   color: gray;
 }
 
-header a:hover {
-  color: rgb(58, 58, 58);
+header,
+footer a:hover {
+  color: rgb(27, 27, 27);
 }
 
 button {
   background: none;
   border: none;
-  padding: 0;
+  padding: 4% 10%;
   font: inherit;
-  color: inherit;
-  /* Inherit text color from parent */
   cursor: pointer;
-  /* Or default, depending on desired behavior */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  transition: all 0.15s ease-in;
+}
+
+button:hover {
+  transform: scale(105%);
+}
+
+h1 {
+  font-family: var(--default-serif);
+  text-align: center;
+  font-size: 2rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 2%;
 }
