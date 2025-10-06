@@ -1,0 +1,182 @@
+/* Header & Navbar */
+#nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: var(--primary);
+}
+
+#nav-left {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+#nav-logo {
+    font-family: var(--default-serif);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    line-height: 0px;
+}
+
+#nav-logo>svg {
+    width: 50px;
+    height: 50px;
+}
+
+#nav-selector {
+    display: none;
+}
+
+#nav-button {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+
+#nav-button>button {
+    padding: 0.4rem 1rem;
+    flex: 0 0 auto;
+    width: auto;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main */
+.emphasis {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Hero */
+#hero-main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#hero-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+#hero-buttons>button {
+    border: solid;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: var(--primary);
+}
+
+#hero-buttons>button:hover {
+    background-color: var(--secondary);
+}
+
+/* Faculty List */
+#faculty-main {
+    margin: 50px 0;
+    text-align: center;
+}
+
+/* Footer */
+#footer-main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    text-align: center;
+    background: var(--primary);
+    gap: 10px;
+}
+
+#footer-info>li>svg {
+    width: 20px;
+}
+
+#footer-info>li {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#footer-socials {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#footer-socials svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Media Query */
+@media (min-width: 640px) {
+    /* Small devices and up */
+}
+
+/* md: 768px and up */
+@media (min-width: 768px) {
+    #nav-selector {
+        display: flex;
+        gap: 20px;
+    }
+
+    #footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* lg: 1024px and up */
+@media (min-width: 1024px) {
+    #nav-logo {
+        font-size: 1.7rem;
+    }
+
+    #hero-main {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+    }
+
+    #faculty-main {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+    }
+
+    #faculty-main>* {
+        flex: 1;
+    }
+
+    #faculty-text {
+        order: 1;
+    }
+}
+
+/* xl: 1280px and up */
+@media (min-width: 1280px) {
+    body {
+        font-size: large;
+    }
+
+    main {
+        padding: 20px 70px;
+    }
+}
+
+/* 2xl: 1536px and up */
+@media (min-width: 1536px) {
+    /* 2X large devices and up */
+}
