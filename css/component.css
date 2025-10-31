@@ -32,21 +32,153 @@
     display: none;
 }
 
-#nav-button {
+#theme-main {
     display: flex;
     gap: 10px;
     justify-content: end;
 }
 
-#nav-button>button {
-    padding: 0.4rem 1rem;
+#theme-main>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 0 0 auto;
-    width: auto;
-    border-radius: 2rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     font-size: 1.1rem;
     background-color: black;
     color: white;
     font-weight: bold;
+}
+
+#theme-main>button>svg {
+    width: 75%;
+}
+
+#theme-main>button.dark {
+    background-color: white;
+    color: black;
+}
+
+#theme-main>button>svg#theme-light-icon {
+    color: black;
+    display: none;
+}
+
+#theme-main>button.dark>svg#theme-dark-icon {
+    color: black;
+    display: none;
+}
+
+#theme-main>button.dark>svg#theme-light-icon {
+    color: black;
+    display: block;
+}
+
+/* Hamburger button (mobile) */
+#nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger {
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    top: 6px;
+}
+
+/* When nav is open, animate hamburger into an X */
+#nav-main.open .hamburger {
+    background: transparent;
+}
+
+#nav-main.open .hamburger::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+#nav-main.open .hamburger::after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile vertical navigation overlay */
+#nav-main .mobile-nav-backdrop {
+    display: none;
+}
+
+#nav-main.open #nav-selector {
+    display: flex;
+    position: fixed;
+    inset: 0 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 60;
+    padding: 40px 20px;
+}
+
+#nav-main.open #nav-selector a {
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* hide regular nav-selector on small screens (already hidden by default) but ensure toggle visible */
+#nav-toggle {
+    color: rgb(23, 23, 23);
+}
+
+#nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+/* Hide hamburger on md and up (Tailwind md breakpoint = 768px) */
+@media (min-width: 768px) {
+    #nav-toggle {
+        display: none;
+    }
+
+    /* ensure nav-selector is displayed as flex at md (already set below) */
+    #nav-main.open #nav-selector {
+        position: static;
+        background: transparent;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        padding: 0;
+    }
 }
 
 /* Main */

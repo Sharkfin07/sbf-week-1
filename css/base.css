@@ -15,6 +15,25 @@
   box-sizing: border-box;
 }
 
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.placeholder {
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.placeholder>h1 {
+  color: white;
+  font-size: 3rem;
+  font-family: sans-serif;
+}
+
 body {
   margin: 0;
   line-height: 1.6;
